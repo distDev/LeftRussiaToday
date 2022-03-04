@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import '../components/UI/mainContainer/main-container.scss';
+@import '../components/UI/container/container.scss';
+@import '../components/UI/mainGridContainer/main-grid-container.scss';
+@import '../components/mainBanner/main-banner.scss';
+@import '../components/UI/pulse/pulse.scss';
+@import '../components/contacts/contacts.scss';
+@import '../components/main/main.scss';
+
+
+html,
+body {
+  background: #F0F0F0;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}

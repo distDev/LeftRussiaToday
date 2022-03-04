@@ -1,0 +1,44 @@
+.main-banner {
+  width: 100%;
+  background: #141414;
+  color: white;
+  position: relative;
+  border-radius: 40px;
+  
+  padding: 50px 100px;
+  margin-top: 50px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 48px;
+    max-width: 868px;
+  }
+
+  .main-banner__companies {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    h3 {
+      font-size: 24px;
+      margin: 0px 15px;
+    }
+    span {
+      color: #55ffc2;
+      
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+
+  .main-banner__logos {
+    display: flex;
+    gap: 30px;
+    margin-top: 80px;
+  }
+
+  .main-banner__eagle_img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
