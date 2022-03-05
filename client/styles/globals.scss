@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import '../components/UI/mainContainer/main-container.scss';
 @import '../components/UI/container/container.scss';
-@import '../components/UI/mainGridContainer/main-grid-container.scss';
 @import '../components/mainBanner/main-banner.scss';
 @import '../components/UI/pulse/pulse.scss';
 @import '../components/contacts/contacts.scss';
 @import '../components/main/main.scss';
-
+@import '../components/UI/container/container.scss';
+@import '../components/filter/filter.scss';
+@import '../components/UI/gridContainer/grid-container.scss';
+@import '../components/cards/cards.scss';
+@import '../components/card/card.scss';
+@import '../components/companies/companies.scss';
+@import '../components/UI/newsContainer/news-container.scss';
+@import '../components/cardNews/card-news.scss';
 
 html,
 body {

@@ -1,0 +1,25 @@
+.filter {
+  display: flex;
+  gap: 10px;
+
+  select {
+    padding: 15px;
+    box-sizing: border-box;
+    width: 25%;
+    border: none;
+    color: #868687;
+    background: #f1f1f1;
+    border-radius: 8px;
+    border-right: 16px solid transparent;
+    
+  }
+
+  input {
+    padding: 15px;
+    width: 50%;
+    color: #868687;
+    background: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+  }
+}

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { companiesData } from '../../utils/data';
 import Pulse from '../UI/pulse/Pulse';
 
 type Props = {};
@@ -11,7 +12,7 @@ const MainBanner = () => {
       <div className='main-banner__companies'>
         <Pulse />
         <h3> Всего: </h3>
-        <span>78 компаний</span>
+        <span>{companiesData.length} компаний</span>
       </div>
       <div className='main-banner__logos'>
         <Image src={'/mercedes.png'} width={40} height={40} alt='dell' />
