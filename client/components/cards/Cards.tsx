@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { ICompanie } from '../../interfaces/interfaces';
 import { companiesData } from '../../utils/data';
 import Card from '../card/Card';
 import GridContainer from '../UI/gridContainer/GridContainer';
 
-type Props = {};
+type ICards = {
+  allData: ICompanie[];
+};
 
-const Cards = (props: Props) => {
+const Cards: FC<ICards> = ({allData}) => {
+
   return (
     <GridContainer>
-      {companiesData.map((e) => (
+      {allData.map((e) => (
         <Card
           companie={e.companie}
           img={e.img}
