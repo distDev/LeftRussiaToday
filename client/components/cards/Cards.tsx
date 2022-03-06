@@ -14,6 +14,7 @@ const Cards: FC<ICards> = ({allData}) => {
     <GridContainer>
       {allData.map((e) => (
         <Card
+        category={e.category}
           companie={e.companie}
           img={e.img}
           status={e.status}

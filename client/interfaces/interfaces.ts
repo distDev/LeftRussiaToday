@@ -3,6 +3,7 @@ export interface ICompanie {
   img: string;
   companie: string;
   status: string;
+  category: string;
 }
 
 export interface INews {

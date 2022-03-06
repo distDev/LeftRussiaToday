@@ -1,47 +1,48 @@
 import React, { FC, useState } from 'react';
 
 type IFilter = {
-  handleFilter: (name: string) => void;
+  handleNameFilter: (name: string) => void;
+  handleCategoriesFilter: (category: string) => void;
+  categories: string[];
 };
 
-const Filter: FC<IFilter> = ({ handleFilter }) => {
-  const [category, setCategory] = useState('Любой статус');
-
-  const handleCatChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCategory(e.target.value);
-    handleFilter(e.target.value);
-  };
-
+const Filter: FC<IFilter> = ({
+  handleNameFilter,
+  handleCategoriesFilter,
+  categories,
+}) => {
+  const [category, setCategory] = useState('');
+  const [name, setName] = useState('');
   
-
-  console.log(category);
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCategory(e.target.value);
+    handleCategoriesFilter(e.target.value);
+  };
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+    handleNameFilter(e.target.value);
+  };
 
   return (
     <div className='filter'>
-      <input type='text' placeholder='Поиск...' />
+      <input
+        type='text'
+        value={name}
+        onChange={handleNameChange}
+        placeholder='Поиск...'
+      />
       <select
-        name='status'
-        defaultValue={'Любой статус'}
+        id='category'
+        defaultValue={'категории'}
+        onChange={handleCategoryChange}
         value={category}
-        onChange={handleCatChange}
-        id='14fes'
       >
-        <option value='Любой статус'>Любой статус</option>
-        <option value='Полностью'>Полностью</option>
-        <option value='Частично'>Частично</option>
-      </select>
-      <select name='category' id='14fes'>
-        <option disabled hidden selected={true} value='full'>
-          Категория
-        </option>
-        <option value='semi'>Техника</option>
-        <option value='full'>Продукты</option>
-        <option value='semi'>It</option>
-        <option value='full'>Автомобили</option>
-        <option value='semi'>Одежда</option>
-        <option value='full'>Авиация</option>
-        <option value='semi'>Финансы</option>
-        <option value='semi'>Спорт</option>
+        <option value=''>Все категории</option>
+        {categories.map((e) => (
+          <option key={e} value={e}>
+            {e}
+          </option>
+        ))}
       </select>
     </div>
   );
