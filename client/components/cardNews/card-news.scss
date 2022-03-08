@@ -2,8 +2,9 @@
   width: 100%;
   height: auto;
   padding: 12px;
-  border: 1.3px solid #e7e7e7;
-  border-radius: 15px;
+  
+
+  border-radius: 0px;
   display: flex;
   transition: 0.4s;
 
@@ -63,7 +64,7 @@
   &:hover {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    border: 1px solid white;
+   border-radius: 15px;
     transition: 0.4s;
   }
 }

@@ -1,44 +1,59 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 type IFilter = {
-  handleNameFilter: (name: string) => void;
-  handleCategoriesFilter: (category: string) => void;
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
+ 
+  category: string;
+
+  status: string;
+  setStatus: React.Dispatch<React.SetStateAction<string>>;
   categories: string[];
+  statuses: string[];
 };
 
 const Filter: FC<IFilter> = ({
-  handleNameFilter,
-  handleCategoriesFilter,
   categories,
+  category,
+
+  setCategory,
+
+  status,
+  setStatus,
+  statuses,
 }) => {
-  const [category, setCategory] = useState('');
-  const [name, setName] = useState('');
-  
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCategory(e.target.value);
-    handleCategoriesFilter(e.target.value);
   };
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-    handleNameFilter(e.target.value);
+  const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setStatus(e.target.value);
   };
 
+  
+ 
   return (
     <div className='filter'>
-      <input
-        type='text'
-        value={name}
-        onChange={handleNameChange}
-        placeholder='Поиск...'
-      />
+    
       <select
         id='category'
-        defaultValue={'категории'}
+        defaultValue={'Все категории'}
         onChange={handleCategoryChange}
         value={category}
       >
-        <option value=''>Все категории</option>
+        <option value='Все категории'>Все категории</option>
         {categories.map((e) => (
+          <option key={e} value={e}>
+            {e}
+          </option>
+        ))}
+      </select>
+      <select
+        id='status'
+        defaultValue={'Любой статус'}
+        onChange={handleStatusChange}
+        value={status}
+      >
+        <option value='Любой статус'>Любой статус</option>
+        {statuses.map((e) => (
           <option key={e} value={e}>
             {e}
           </option>

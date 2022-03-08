@@ -1,19 +1,18 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { ICompanie } from '../../interfaces/interfaces';
 import { companiesData } from '../../utils/data';
-import Card from '../card/Card';
 import Cards from '../cards/Cards';
 import Filter from '../filter/Filter';
 import Container from '../UI/container/Container';
-import GridContainer from '../UI/gridContainer/GridContainer';
 import { UpdateTime } from '../updateTime/UpdateTime';
 
-type Props = {};
-
 export const Companies: FC = () => {
+  const [initialData, setInitialData] = useState<ICompanie[]>(companiesData);
+  const [category, setCategory] = useState('');
+  const [status, setStatus] = useState('');
+
   //filter data
-  let [allData, setAllData] = useState<ICompanie[]>(companiesData);
-  
+  let [allData, setAllData] = useState<ICompanie[]>(initialData);
 
   const generateStatusForDropdown = () => {
     return [...new Set(companiesData.map((item) => item.status))];
@@ -22,43 +21,52 @@ export const Companies: FC = () => {
   const generateCategoryForDropdown = () => {
     return [...new Set(companiesData.map((item) => item.category))];
   };
+  console.log(name);
 
-  // фильтрация по названию
-  const handleNameFilter = (name: string): void => {
-      const filteredData = companiesData.filter((item) => {
-        if (
-          item.companie.toLocaleLowerCase().includes(name.toLocaleLowerCase())
-        ) {
-          return item;
-        }
-      });
 
-      setAllData(filteredData);
-  };
 
   // фильтрация по категориям
-  const handleCategoriesFilter = (category: string): void => {
-   const filteredData = companiesData.filter((item) => {
-     if (item.category === category) {
-       return item;
-     }
-   });
-
-   setAllData(filteredData);
+  const handleCategoriesFilter = (array: any) => {
+    if (category === 'Все категории') {
+      return array;
+    } else {
+      return array.filter((item: any) => item.category === category);
+    }
   };
+
+  // фильтрация по статусу
+  const handleStatusesFilter = (array: any) => {
+    if (status === 'Любой статус') {
+      return array;
+    } else {
+      return array.filter((item: any) => item.status === status);
+    }
+  };
+
+  // фильтрация
+  useEffect(() => {
+    let result = initialData;
+    result = handleCategoriesFilter(result);
+    result = handleStatusesFilter(result);
   
 
-  console.log(allData)
+    setAllData(result);
+  }, [category, status]);
 
   return (
     <Container>
       <Filter
+        setCategory={setCategory}
+        category={category}
+      
+        status={status}
+        setStatus={setStatus}
+  
         categories={generateCategoryForDropdown()}
-        handleCategoriesFilter={handleCategoriesFilter}
-        handleNameFilter={handleNameFilter}
+        statuses={generateStatusForDropdown()}
       />
       <UpdateTime />
-      <Cards allData={allData} />
+      <Cards allData={allData.length > 0 ? allData : companiesData} />
     </Container>
   );
 };
