@@ -3,3 +3,12 @@
     flex-direction: column;
     gap: 20px;
 }
+
+//  стили для телефонов
+@media screen and (max-width: 479px) {
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+}

@@ -11,14 +11,14 @@ const MainBanner = () => {
       <h1>Компании, которые покинули Россию после операции на Украине</h1>
       <div className='main-banner__companies'>
         <Pulse />
-        <h3> Всего: </h3>
+        <h3>Всего: </h3>
         <span>{companiesData.length} компаний</span>
       </div>
-      <div className='main-banner__logos'>
+      {/* <div className='main-banner__logos'>
         <Image src={'/mercedes.png'} width={40} height={40} alt='dell' />
         <Image src={'/hp.png'} width={40} height={40} alt='hp' />
         <Image src={'/paramount.png'} width={50} height={40} alt='paramount' />
-      </div>
+      </div> */}
       <img src='./eagle.png' alt='eagle' className='main-banner__eagle_img' />
     </div>
   );

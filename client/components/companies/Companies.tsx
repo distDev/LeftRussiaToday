@@ -8,11 +8,9 @@ import { UpdateTime } from '../updateTime/UpdateTime';
 
 export const Companies: FC = () => {
   const [initialData, setInitialData] = useState<ICompanie[]>(companiesData);
-  const [category, setCategory] = useState('');
-  const [status, setStatus] = useState('');
-
-  //filter data
-  let [allData, setAllData] = useState<ICompanie[]>(initialData);
+  const [category, setCategory] = useState('Все категории');
+  const [status, setStatus] = useState('Любой статус');
+  const [allData, setAllData] = useState<ICompanie[]>(companiesData);
 
   const generateStatusForDropdown = () => {
     return [...new Set(companiesData.map((item) => item.status))];
@@ -21,34 +19,32 @@ export const Companies: FC = () => {
   const generateCategoryForDropdown = () => {
     return [...new Set(companiesData.map((item) => item.category))];
   };
-  console.log(name);
 
-
+  console.log(`данные: ${allData}`);
 
   // фильтрация по категориям
-  const handleCategoriesFilter = (array: any) => {
+  const handleCategoriesFilter = (array: ICompanie[]) => {
     if (category === 'Все категории') {
       return array;
     } else {
-      return array.filter((item: any) => item.category === category);
+      return array.filter((item) => item.category === category);
     }
   };
 
   // фильтрация по статусу
-  const handleStatusesFilter = (array: any) => {
+  const handleStatusesFilter = (array: ICompanie[]) => {
     if (status === 'Любой статус') {
       return array;
     } else {
-      return array.filter((item: any) => item.status === status);
+      return array.filter((item) => item.status === status);
     }
   };
 
-  // фильтрация
+  // применение нескольких фильтров при рендере
   useEffect(() => {
     let result = initialData;
-    result = handleCategoriesFilter(result);
+    result =  handleCategoriesFilter(result);
     result = handleStatusesFilter(result);
-  
 
     setAllData(result);
   }, [category, status]);
@@ -58,15 +54,13 @@ export const Companies: FC = () => {
       <Filter
         setCategory={setCategory}
         category={category}
-      
         status={status}
         setStatus={setStatus}
-  
         categories={generateCategoryForDropdown()}
         statuses={generateStatusForDropdown()}
       />
       <UpdateTime />
-      <Cards allData={allData.length > 0 ? allData : companiesData} />
+      <Cards allData={allData} />
     </Container>
   );
 };

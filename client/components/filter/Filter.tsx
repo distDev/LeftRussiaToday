@@ -35,7 +35,6 @@ const Filter: FC<IFilter> = ({
     
       <select
         id='category'
-        defaultValue={'Все категории'}
         onChange={handleCategoryChange}
         value={category}
       >
@@ -48,7 +47,7 @@ const Filter: FC<IFilter> = ({
       </select>
       <select
         id='status'
-        defaultValue={'Любой статус'}
+       
         onChange={handleStatusChange}
         value={status}
       >

@@ -4,3 +4,13 @@
     background: rgb(255, 255, 255);
     border-radius: 30px;
 }
+
+//  стили для телефонов
+@media screen and (max-width: 479px) {
+ .container {
+    width: 100%;
+    padding: 30px 15px 15px 15px;
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+}
+}

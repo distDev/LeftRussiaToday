@@ -11,15 +11,35 @@
     background: #f1f1f1;
     border-radius: 8px;
     border-right: 16px solid transparent;
-    
+    outline: none;
+    font-weight: medium;
+    font-size: 14px;
   }
 
-  input {
+ 
+}
+
+//  стили для телефонов 
+@media screen and (max-width: 479px) {
+.filter {
+  display: flex;
+  gap: 10px;
+
+  select {
     padding: 15px;
+    box-sizing: border-box;
     width: 50%;
+    border: none;
     color: #868687;
     background: #f1f1f1;
-    border: none;
     border-radius: 8px;
+    border-right: 16px solid transparent;
+    outline: none;
+    font-weight: medium;
+    font-size: 14px;
   }
+
+ 
+}
+
 }

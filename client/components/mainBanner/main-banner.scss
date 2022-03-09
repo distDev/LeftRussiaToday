@@ -3,30 +3,32 @@
   background: #141414;
   color: white;
   position: relative;
-  border-radius: 40px;
-  
+  border-radius: 30px;
+  height: 455px;
   padding: 50px 100px;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h1 {
     font-weight: 700;
-    font-size: 48px;
+    font-size: 56px;
     max-width: 868px;
   }
 
   .main-banner__companies {
     display: flex;
-    margin-top: 30px;
     align-items: center;
     h3 {
-      font-size: 24px;
+      font-size: 22px;
       margin: 0px 15px;
     }
     span {
       color: #55ffc2;
-      
+
       font-weight: 600;
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 
@@ -40,5 +42,64 @@
     position: absolute;
     right: 0;
     top: 0;
+    width: auto;
+    height: 100%;
+    border-radius: 30px;
+  }
+}
+
+// стили для телефона
+@media screen and (max-width: 479px) {
+  .main-banner {
+    width: 100%;
+    background: #141414;
+    color: white;
+    position: relative;
+    border-radius: 0px;
+    height: 370px;
+    padding: 40px 15px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+      font-weight: 600;
+      font-size: 28px;
+      width: 90%;
+    }
+
+    .main-banner__companies {
+      display: flex;
+      align-items: center;
+      h3 {
+        font-weight: 500;
+        font-size: 18px;
+        margin: 0px 10px;
+      }
+      span {
+        color: #55ffc2;
+
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+
+    .main-banner__logos {
+      display: flex;
+      gap: 30px;
+      margin-top: 80px;
+    }
+
+    .main-banner__eagle_img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      width: auto;
+      height: 90%;
+      border-radius: 0px;
+      opacity: 0.2;
+    }
   }
 }

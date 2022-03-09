@@ -1,7 +1,14 @@
 .news-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%;
-    margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  margin-top: 25px;
+}
+
+//  стили для телефонов
+@media screen and (max-width: 479px) {
+  .news-container {
+    gap: 0px;
+  }
 }

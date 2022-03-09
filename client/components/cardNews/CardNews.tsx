@@ -13,7 +13,7 @@ const CardNews: FC<INews> = ({
   return (
     <div className='card-news'>
       <div className='card-news__image'>
-        <Image src={img} alt='картинка' height={179} width={235} />
+        <Image src={img} alt='картинка' layout='fill' objectFit='cover' />
       </div>
       <div className='card-news__content'>
         <div className='card-news__content_main'>

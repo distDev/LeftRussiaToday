@@ -1,8 +1,72 @@
 .contacts {
-    height: 386px;
-    padding: 40px 33px;
+  height: 296px;
+  padding: 40px 40px;
+  background: #141414;
+  border-radius: 30px;
+  position: sticky;
+  top: 30px;
+  font-size: 18px;
+
+  p {
+    color: white;
+  }
+
+  a {
+    color: #55ffc2;
+  }
+
+  .contacts__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .contacts__content_top_links {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .contacts__content_bottom {
+      a {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+//  стили для телефонов
+@media screen and (max-width: 479px) {
+  .contacts {
+    height: 200px;
+    padding: 20px 15px;
     background: #141414;
-    border-radius: 30px;
-    position: sticky;
-    top: 30px;
+    border-radius: 0px;
+    font-size: 18px;
+
+    p {
+      color: white;
+    }
+
+    a {
+      color: #55ffc2;
+    }
+
+    .contacts__content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .contacts__content_top_links {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
+      .contacts__content_bottom {
+        a {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }

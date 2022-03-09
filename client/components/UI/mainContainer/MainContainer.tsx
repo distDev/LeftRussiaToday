@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 
-
 type Props = {};
 
 const MainContainer: FC = ({ children }) => {
