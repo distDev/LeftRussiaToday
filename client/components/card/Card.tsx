@@ -14,7 +14,7 @@ const Card: FC<ICompanie> = ({ status, id, companie, img }) => {
         </p>
         <p>
           Статус:
-          <span className={status === 'Частично' ? 'purple' : 'red'}>
+          <span className={status === 'Частично работает' ? 'purple' : 'red'}>
             {status}
           </span>
         </p>

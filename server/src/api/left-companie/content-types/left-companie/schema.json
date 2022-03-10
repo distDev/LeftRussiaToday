@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "left_companies",
+  "info": {
+    "singularName": "left-companie",
+    "pluralName": "left-companies",
+    "displayName": "leftCompanie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Companie": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "Не работает",
+        "Отстранение",
+        "Частично работает",
+        "Работает"
+      ]
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Нефть, газ, энергетика",
+        "Деньги",
+        "Техника, сервисы",
+        "Кино, стриминги",
+        "Игры",
+        "Общепит",
+        "Продукты, напитки",
+        "Одежда, обувь",
+        "Косметика, бытовая химия",
+        "Табак",
+        "Спорт",
+        "Путешествия и самолеты",
+        "Автомобили",
+        "Доставка",
+        "Прочее"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
